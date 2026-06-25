@@ -1,232 +1,289 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Veduuuuu❤️</title>
+<title>For Veduuuuu/.l̥❤️</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:#111;
-color:white;
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px 15px;
-overflow-x:hidden;
+    overflow:auto;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    transition:background-image 1.5s ease-in-out;
 }
 
-.container{
-max-width:900px;
-width:100%;
-text-align:center;
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.15); /* Very light overlay */
+    backdrop-filter:blur(1px); /* Extremely light blur */
+    z-index:1;
+}
+
+.content{
+    position:relative;
+    z-index:5;
+    padding:20px;
+    max-width:850px;
+}
+
+/* Neon Pink Border Text */
+h1, .subtitle, .message, #surprise, button {
+    color: #fff;
+    -webkit-text-stroke: 2px #ff1493; /* Strong neon pink border */
+    text-shadow:
+        0 0 5px #ff1493,
+        0 0 10px #ff1493,
+        0 0 20px #ff69b4,
+        0 0 40px #ff1493,
+        0 0 60px #ff1493;
 }
 
 h1{
-font-size:3rem;
-color:#ff69b4;
-margin-bottom:15px;
-text-shadow:
-0 0 10px #ff69b4,
-0 0 20px #ff69b4,
-0 0 40px #ff69b4;
+    font-size:4.2rem;
+    font-weight:700;
+    letter-spacing:2px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+            0 0 5px #ff1493,
+            0 0 15px #ff1493,
+            0 0 25px #ff69b4;
+    }
+    to{
+        text-shadow:
+            0 0 10px #ff1493,
+            0 0 25px #ff1493,
+            0 0 45px #ff69b4,
+            0 0 70px #ff1493;
+    }
 }
 
 .subtitle{
-font-size:1.1rem;
-opacity:.9;
-margin-bottom:25px;
-}
-
-.slideshow{
-width:100%;
-margin-bottom:25px;
-}
-
-.slide{
-display:none;
-}
-
-.slide.active{
-display:block;
-}
-
-.slide img{
-width:100%;
-max-height:65vh;
-object-fit:contain;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.5);
+    margin-top:15px;
+    font-size:1.25rem;
+    opacity:0.98;
+    font-weight:500;
 }
 
 .message{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:20px;
-line-height:1.8;
-font-size:1.05rem;
+    margin-top:30px;
+    padding:32px;
+    background:rgba(0,0,0,0.22); /* Very light box */
+    backdrop-filter:blur(2px); /* Extremely light blur */
+    border:1px solid rgba(255,105,180,0.3);
+    border-radius:25px;
+    line-height:1.85;
+    font-size:1.12rem;
 }
 
 button{
-margin-top:25px;
-padding:12px 28px;
-border:none;
-border-radius:50px;
-background:#ff69b4;
-color:white;
-font-size:1rem;
-cursor:pointer;
+    margin-top:25px;
+    padding:15px 38px;
+    border:none;
+    border-radius:50px;
+    background:#ff1493;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    font-size:1.1rem;
+    -webkit-text-stroke: 1px #fff;
+    box-shadow:0 0 20px #ff1493;
 }
 
 button:hover{
-transform:scale(1.05);
+    transform:scale(1.06);
+    box-shadow:0 0 35px #ff1493;
 }
 
 #surprise{
-display:none;
-margin-top:20px;
-font-size:1.1rem;
+    display:none;
+    margin-top:20px;
+    font-size:1.25rem;
+    font-weight:600;
+    padding:18px;
+    background:rgba(0,0,0,0.25);
+    border-radius:18px;
+    border:1px solid rgba(255,105,180,0.3);
 }
 
 .heart{
-position:fixed;
-bottom:-50px;
-animation:floatHeart 8s linear forwards;
-pointer-events:none;
+    position:absolute;
+    pointer-events:none;
+    animation:heartFloat 8s linear infinite;
+    z-index:2;
+    text-shadow: 0 0 8px #ff1493;
 }
 
-@keyframes floatHeart{
-to{
-transform:translateY(-110vh);
-opacity:0;
+@keyframes heartFloat{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
 }
+
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3;
 }
 
 @media(max-width:768px){
-
-h1{
-font-size:2rem;
-}
-
-.subtitle{
-font-size:.95rem;
-}
-
-.message{
-font-size:.95rem;
-padding:20px;
-}
-
-.slide img{
-max-height:50vh;
-}
-
+    h1{
+        font-size:3.1rem;
+    }
+    .subtitle{
+        font-size:1.05rem;
+    }
+    .message{
+        padding:22px;
+        font-size:1.05rem;
+    }
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="container">
+<div class="overlay"></div>
+<canvas id="canvas"></canvas>
 
-<h1>❤️ For Someone Special ❤️</h1>
+<div class="content">
 
-<p class="subtitle">
-Some moments become memories. Some people become a part of your heart.
-</p>
+    <h1>❤️ For Someone Special ❤️</h1>
 
-<div class="slideshow">
+    <p class="subtitle">
+        Some moments become memories. Some people become a part of your heart.
+    </p>
 
-<div class="slide active">
-<img src="image1.jpeg">
-</div>
+    <div class="message">
+        For all the laughs, conversations, memories and moments we've shared, thank you.<br><br>
 
-<div class="slide">
-<img src="image2.jpeg">
-</div>
+        You've become someone I genuinely care about and appreciate more than words can explain.<br><br>
 
-<div class="slide">
-<img src="image3.jpeg">
-</div>
+        No matter how much time passes, the memories we've created together will always mean something to me.<br><br>
 
-<div class="slide">
-<img src="image4.jpeg">
-</div>
+        Thank you for being part of my life. ❤️
+    </div>
 
-</div>
+    <button onclick="showSurprise()">
+        A Little Message 💌
+    </button>
 
-<div class="message">
-For all the laughs, conversations, memories and moments we've shared, thank you.<br><br>
-
-You've become someone I genuinely care about and appreciate more than words can explain.<br><br>
-
-No matter how much time passes, the memories we've created together will always mean something to me.<br><br>
-
-Thank you for being part of my life. ❤️
-
-</div>
-
-<button onclick="showSurprise()">
-A Little Message 💌
-</button>
-
-<div id="surprise">
-❤️ Some people come into our lives and leave footprints that never fade. ❤️
-</div>
+    <div id="surprise">
+        ❤️ Some people come into our lives and leave footprints that never fade. ❤️
+    </div>
 
 </div>
 
 <script>
+// PHOTO BACKGROUND SLIDESHOW
+const backgrounds = [
+    "image1.jpeg",
+    "image2.jpeg",
+    "image3.jpeg",
+    "image4.jpeg"
+];
 
-let current=0;
-const slides=document.querySelectorAll('.slide');
+let bgIndex = 0;
 
-function nextSlide(){
-
-slides[current].classList.remove('active');
-
-current=(current+1)%slides.length;
-
-slides[current].classList.add('active');
-
+function changeBackground() {
+    document.body.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
+    bgIndex = (bgIndex + 1) % backgrounds.length;
 }
 
-setInterval(nextSlide,3000);
+changeBackground();
+setInterval(changeBackground, 5000);
 
-function showSurprise(){
-document.getElementById("surprise").style.display="block";
+// FLOATING HEARTS
+function createHeart() {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (24 + Math.random() * 28) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
 }
 
-function createHeart(){
+setInterval(createHeart, 550);
 
-const heart=document.createElement("div");
+// PARTICLES
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-heart.className="heart";
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(20+Math.random()*20)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},8000);
-
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
-setInterval(createHeart,1200);
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
+let particles = [];
+
+for(let i = 0; i < 110; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2.2 + 1,
+        dx: (Math.random() - 0.5) * 0.7,
+        dy: (Math.random() - 0.5) * 0.7
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 105, 180, 0.7)";
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// MESSAGE BUTTON
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
 </script>
 
 </body>
