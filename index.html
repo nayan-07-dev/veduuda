@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For VEDUUUUU❤️</title>
+<title>For Veduuuuu❤️</title>
 
 <style>
 *{
@@ -18,8 +18,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background: #0a0a0a;
-    padding:20px;
+    background:#0a0a0a;
+    padding:15px;
     overflow:auto;
 }
 
@@ -27,16 +27,16 @@ body{
 .main-box{
     width:100%;
     max-width:820px;
-    height:85vh;
+    height:88vh;
     min-height:620px;
     position:relative;
-    border-radius:30px;
+    border-radius:28px;
     overflow:hidden;
-    box-shadow: 0 0 40px rgba(255, 20, 147, 0.4);
-    border: 3px solid #ff1493;
+    box-shadow: 0 0 35px rgba(255, 20, 147, 0.35);
+    border: 4px solid #ff1493;
 }
 
-/* Slideshow Container */
+/* Slideshow Background */
 .slideshow{
     position:absolute;
     inset:0;
@@ -46,20 +46,20 @@ body{
     transition:background-image 1.5s ease-in-out;
 }
 
-/* Light overlay for readability - NO BLUR */
+/* Very light overlay - no blur */
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.35);
     z-index:1;
 }
 
-/* Content inside the box */
+/* Content */
 .content{
     position:relative;
     z-index:5;
     height:100%;
-    padding:40px 35px;
+    padding:45px 35px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -67,96 +67,87 @@ body{
     color:white;
 }
 
-/* Neon Pink Text - Reduced glow */
+/* Simple Pink Border Text - White fill */
 h1, .subtitle, .message, #surprise {
-    color: #fff;
-    -webkit-text-stroke: 1.5px #ff1493;
-    text-shadow:
-        0 0 8px #ff1493,
-        0 0 16px #ff1493;
+    color: #ffffff;
+    -webkit-text-stroke: 1.8px #ff1493;
+    text-shadow: none; /* Removed glow */
 }
 
 h1{
-    font-size:3.6rem;
+    font-size:3.5rem;
     font-weight:700;
     letter-spacing:1px;
-    margin-bottom:12px;
-    animation:glow 3s infinite alternate;
-}
-
-@keyframes glow{
-    from { text-shadow: 0 0 8px #ff1493, 0 0 16px #ff1493; }
-    to   { text-shadow: 0 0 12px #ff1493, 0 0 25px #ff1493, 0 0 35px #ff69b4; }
+    margin-bottom:15px;
 }
 
 .subtitle{
-    font-size:1.25rem;
+    font-size:1.22rem;
     margin-bottom:35px;
     opacity:0.95;
     font-weight:500;
 }
 
 .message{
-    background:rgba(0,0,0,0.5);
-    padding:28px;
-    border-radius:20px;
-    line-height:1.8;
+    background:rgba(0,0,0,0.45);
+    padding:30px;
+    border-radius:18px;
+    line-height:1.85;
     font-size:1.1rem;
-    margin-bottom:30px;
-    border:1px solid rgba(255,105,180,0.3);
+    margin-bottom:32px;
+    border:2px solid #ff1493;
 }
 
 button{
     align-self:center;
-    padding:14px 40px;
-    border:none;
+    padding:15px 42px;
+    border:2px solid #ff1493;
     border-radius:50px;
-    background:#ff1493;
+    background:transparent;
     color:white;
     font-weight:bold;
     font-size:1.1rem;
     cursor:pointer;
     transition:.3s;
-    box-shadow:0 0 20px #ff1493;
 }
 
 button:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 30px #ff1493;
+    background:#ff1493;
+    transform:scale(1.05);
 }
 
 #surprise{
     display:none;
-    margin-top:15px;
-    font-size:1.3rem;
+    margin-top:20px;
+    font-size:1.28rem;
     font-weight:600;
-    background:rgba(0,0,0,0.6);
-    padding:20px;
-    border-radius:18px;
-    border:1px solid #ff1493;
+    background:rgba(0,0,0,0.5);
+    padding:22px;
+    border-radius:16px;
+    border:2px solid #ff1493;
 }
 
 /* Floating Hearts */
 .heart{
     position:absolute;
     pointer-events:none;
-    animation:heartFloat 7s linear infinite;
+    animation:heartFloat 8s linear infinite;
     z-index:10;
-    text-shadow:0 0 10px #ff1493;
+    color:#ff1493;
 }
 
 @keyframes heartFloat{
     from{ transform:translateY(100%); opacity:1; }
-    to{ transform:translateY(-120%); opacity:0; }
+    to{ transform:translateY(-130%); opacity:0; }
 }
 
 @media(max-width:768px){
     .main-box{
-        height:92vh;
-        min-height:580px;
+        height:94vh;
+        min-height:560px;
     }
-    h1{ font-size:2.8rem; }
-    .message{ padding:22px; font-size:1.05rem; }
+    h1{ font-size:2.7rem; }
+    .message{ padding:24px; font-size:1.05rem; }
 }
 </style>
 </head>
@@ -164,15 +155,10 @@ button:hover{
 <body>
 
 <div class="main-box">
-    <!-- Slideshow Background -->
     <div id="slideshow" class="slideshow"></div>
-    
-    <!-- Light Overlay (no blur) -->
     <div class="overlay"></div>
 
-    <!-- All Content -->
     <div class="content">
-
         <h1>❤️ For Someone Special ❤️</h1>
         
         <p class="subtitle">
@@ -194,14 +180,17 @@ button:hover{
         </button>
 
         <div id="surprise">
-            ❤️ Some people come into our lives and leave footprints that never fade. ❤️
-        </div>
+            ❤️ Just wanted to say this...
 
+No matter what happens, one thing I genuinely admire about you is your heart. You care deeply, you love deeply, and that's something I will always appreciate about you.
+
+You're special to me, and I hope you never forget that ❤️
+        </div>
     </div>
 </div>
 
 <script>
-// Slideshow inside the box
+// Slideshow
 const backgrounds = [
     "image1.jpeg",
     "image2.jpeg",
@@ -218,7 +207,7 @@ function changeBackground() {
 }
 
 changeBackground();
-setInterval(changeBackground, 4500);
+setInterval(changeBackground, 5000);
 
 // Floating Hearts
 function createHeart() {
@@ -226,14 +215,14 @@ function createHeart() {
     heart.className = "heart";
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "%";
-    heart.style.fontSize = (26 + Math.random() * 32) + "px";
-    heart.style.top = "80%";
+    heart.style.fontSize = (28 + Math.random() * 26) + "px";
+    heart.style.top = Math.random() * 70 + "%";
     document.querySelector('.main-box').appendChild(heart);
 
-    setTimeout(() => heart.remove(), 7500);
+    setTimeout(() => heart.remove(), 8000);
 }
 
-setInterval(createHeart, 650);
+setInterval(createHeart, 700);
 </script>
 
 </body>
