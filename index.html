@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+transition:background-image 1.5s ease-in-out;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(3px);
+}
+
+.content{
+position:relative;
+z-index:5;
+padding:20px;
+max-width:850px;
+}
+
+h1{
+font-size:4rem;
+font-weight:700;
+letter-spacing:2px;
+color:white;
+
+-webkit-text-stroke:1px #ff69b4;
+
+text-shadow:
+0 0 5px #ff69b4,
+0 0 10px #ff69b4,
+0 0 20px #ff69b4,
+0 0 40px #ff69b4;
+
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:
+0 0 5px #ff69b4,
+0 0 15px #ff69b4;
+}
+to{
+text-shadow:
+0 0 15px #ff69b4,
+0 0 30px #ff69b4,
+0 0 60px #ff69b4;
+}
+}
+
+.subtitle{
+margin-top:15px;
+font-size:1.2rem;
+opacity:0.95;
+}
+
+.message{
+margin-top:30px;
+padding:30px;
+background:rgba(255,255,255,0.10);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:25px;
+line-height:1.9;
+font-size:1.1rem;
+}
+
+button{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:#ff69b4;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #ff69b4;
+}
+
+#surprise{
+display:none;
+margin-top:20px;
+font-size:1.2rem;
+font-weight:600;
+}
+
+.heart{
+position:absolute;
+pointer-events:none;
+animation:heartFloat 8s linear infinite;
+}
+
+@keyframes heartFloat{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:2.4rem;
+}
+
+.subtitle{
+font-size:1rem;
+}
+
+.message{
+padding:20px;
+font-size:1rem;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<canvas id="canvas"></canvas>
+
+<div class="content">
+
+<h1>❤️ For Someone Special ❤️</h1>
+
+<p class="subtitle">
+Some moments become memories. Some people become a part of your heart.
+</p>
+
+<div class="message">
+For all the laughs, conversations, memories and moments we've shared, thank you.<br><br>
+
+You've become someone I genuinely care about and appreciate more than words can explain.<br><br>
+
+No matter how much time passes, the memories we've created together will always mean something to me.<br><br>
+
+Thank you for being part of my life. ❤️
+
+</div>
+
+<button onclick="showSurprise()">
+A Little Message 💌
+</button>
+
+<div id="surprise">
+❤️ Some people come into our lives and leave footprints that never fade. ❤️
+</div>
+
+</div>
+
+<script>
+
+// PHOTO BACKGROUND SLIDESHOW
+
+const backgrounds=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg"
+];
+
+let bgIndex=0;
+
+function changeBackground(){
+
+document.body.style.backgroundImage=
+`url('${backgrounds[bgIndex]}')`;
+
+bgIndex=(bgIndex+1)%backgrounds.length;
+
+}
+
+changeBackground();
+setInterval(changeBackground,5000);
+
+
+// FLOATING HEARTS
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,700);
+
+
+// PARTICLES
+
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<100;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="rgba(255,192,203,0.8)";
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+
+// MESSAGE BUTTON
+
+function showSurprise(){
+
+document.getElementById("surprise").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
