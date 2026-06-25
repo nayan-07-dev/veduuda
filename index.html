@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Veduuuuu/.l̥❤️</title>
+<title>For VEDUUUUU❤️</title>
 
 <style>
 *{
@@ -14,196 +14,194 @@
 }
 
 body{
-    overflow:auto;
-    color:white;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
+    background: #0a0a0a;
+    padding:20px;
+    overflow:auto;
+}
+
+/* Main Central Box */
+.main-box{
+    width:100%;
+    max-width:820px;
+    height:85vh;
+    min-height:620px;
     position:relative;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.4);
+    border: 3px solid #ff1493;
+}
+
+/* Slideshow Container */
+.slideshow{
+    position:absolute;
+    inset:0;
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
     transition:background-image 1.5s ease-in-out;
 }
 
+/* Light overlay for readability - NO BLUR */
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.15); /* Very light overlay */
-    backdrop-filter:blur(1px); /* Extremely light blur */
+    background:rgba(0,0,0,0.45);
     z-index:1;
 }
 
+/* Content inside the box */
 .content{
     position:relative;
     z-index:5;
-    padding:20px;
-    max-width:850px;
+    height:100%;
+    padding:40px 35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    color:white;
 }
 
-/* Neon Pink Border Text */
-h1, .subtitle, .message, #surprise, button {
+/* Neon Pink Text - Reduced glow */
+h1, .subtitle, .message, #surprise {
     color: #fff;
-    -webkit-text-stroke: 2px #ff1493; /* Strong neon pink border */
+    -webkit-text-stroke: 1.5px #ff1493;
     text-shadow:
-        0 0 5px #ff1493,
-        0 0 10px #ff1493,
-        0 0 20px #ff69b4,
-        0 0 40px #ff1493,
-        0 0 60px #ff1493;
+        0 0 8px #ff1493,
+        0 0 16px #ff1493;
 }
 
 h1{
-    font-size:4.2rem;
+    font-size:3.6rem;
     font-weight:700;
-    letter-spacing:2px;
-    animation:glow 2s infinite alternate;
+    letter-spacing:1px;
+    margin-bottom:12px;
+    animation:glow 3s infinite alternate;
 }
 
 @keyframes glow{
-    from{
-        text-shadow:
-            0 0 5px #ff1493,
-            0 0 15px #ff1493,
-            0 0 25px #ff69b4;
-    }
-    to{
-        text-shadow:
-            0 0 10px #ff1493,
-            0 0 25px #ff1493,
-            0 0 45px #ff69b4,
-            0 0 70px #ff1493;
-    }
+    from { text-shadow: 0 0 8px #ff1493, 0 0 16px #ff1493; }
+    to   { text-shadow: 0 0 12px #ff1493, 0 0 25px #ff1493, 0 0 35px #ff69b4; }
 }
 
 .subtitle{
-    margin-top:15px;
     font-size:1.25rem;
-    opacity:0.98;
+    margin-bottom:35px;
+    opacity:0.95;
     font-weight:500;
 }
 
 .message{
-    margin-top:30px;
-    padding:32px;
-    background:rgba(0,0,0,0.22); /* Very light box */
-    backdrop-filter:blur(2px); /* Extremely light blur */
+    background:rgba(0,0,0,0.5);
+    padding:28px;
+    border-radius:20px;
+    line-height:1.8;
+    font-size:1.1rem;
+    margin-bottom:30px;
     border:1px solid rgba(255,105,180,0.3);
-    border-radius:25px;
-    line-height:1.85;
-    font-size:1.12rem;
 }
 
 button{
-    margin-top:25px;
-    padding:15px 38px;
+    align-self:center;
+    padding:14px 40px;
     border:none;
     border-radius:50px;
     background:#ff1493;
     color:white;
     font-weight:bold;
+    font-size:1.1rem;
     cursor:pointer;
     transition:.3s;
-    font-size:1.1rem;
-    -webkit-text-stroke: 1px #fff;
     box-shadow:0 0 20px #ff1493;
 }
 
 button:hover{
-    transform:scale(1.06);
-    box-shadow:0 0 35px #ff1493;
+    transform:scale(1.08);
+    box-shadow:0 0 30px #ff1493;
 }
 
 #surprise{
     display:none;
-    margin-top:20px;
-    font-size:1.25rem;
+    margin-top:15px;
+    font-size:1.3rem;
     font-weight:600;
-    padding:18px;
-    background:rgba(0,0,0,0.25);
+    background:rgba(0,0,0,0.6);
+    padding:20px;
     border-radius:18px;
-    border:1px solid rgba(255,105,180,0.3);
+    border:1px solid #ff1493;
 }
 
+/* Floating Hearts */
 .heart{
     position:absolute;
     pointer-events:none;
-    animation:heartFloat 8s linear infinite;
-    z-index:2;
-    text-shadow: 0 0 8px #ff1493;
+    animation:heartFloat 7s linear infinite;
+    z-index:10;
+    text-shadow:0 0 10px #ff1493;
 }
 
 @keyframes heartFloat{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-120vh);
-        opacity:0;
-    }
-}
-
-canvas{
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:3;
+    from{ transform:translateY(100%); opacity:1; }
+    to{ transform:translateY(-120%); opacity:0; }
 }
 
 @media(max-width:768px){
-    h1{
-        font-size:3.1rem;
+    .main-box{
+        height:92vh;
+        min-height:580px;
     }
-    .subtitle{
-        font-size:1.05rem;
-    }
-    .message{
-        padding:22px;
-        font-size:1.05rem;
-    }
+    h1{ font-size:2.8rem; }
+    .message{ padding:22px; font-size:1.05rem; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay"></div>
-<canvas id="canvas"></canvas>
+<div class="main-box">
+    <!-- Slideshow Background -->
+    <div id="slideshow" class="slideshow"></div>
+    
+    <!-- Light Overlay (no blur) -->
+    <div class="overlay"></div>
 
-<div class="content">
+    <!-- All Content -->
+    <div class="content">
 
-    <h1>❤️ For Someone Special ❤️</h1>
+        <h1>❤️ For Someone Special ❤️</h1>
+        
+        <p class="subtitle">
+            Some moments become memories.<br>Some people become a part of your heart.
+        </p>
 
-    <p class="subtitle">
-        Some moments become memories. Some people become a part of your heart.
-    </p>
+        <div class="message">
+            For all the laughs, conversations, memories and moments we've shared, thank you.<br><br>
 
-    <div class="message">
-        For all the laughs, conversations, memories and moments we've shared, thank you.<br><br>
+            You've become someone I genuinely care about and appreciate more than words can explain.<br><br>
 
-        You've become someone I genuinely care about and appreciate more than words can explain.<br><br>
+            No matter how much time passes, the memories we've created together will always mean something to me.<br><br>
 
-        No matter how much time passes, the memories we've created together will always mean something to me.<br><br>
+            Thank you for being part of my life. ❤️
+        </div>
 
-        Thank you for being part of my life. ❤️
+        <button onclick="showSurprise()">
+            A Little Message 💌
+        </button>
+
+        <div id="surprise">
+            ❤️ Some people come into our lives and leave footprints that never fade. ❤️
+        </div>
+
     </div>
-
-    <button onclick="showSurprise()">
-        A Little Message 💌
-    </button>
-
-    <div id="surprise">
-        ❤️ Some people come into our lives and leave footprints that never fade. ❤️
-    </div>
-
 </div>
 
 <script>
-// PHOTO BACKGROUND SLIDESHOW
+// Slideshow inside the box
 const backgrounds = [
     "image1.jpeg",
     "image2.jpeg",
@@ -212,78 +210,30 @@ const backgrounds = [
 ];
 
 let bgIndex = 0;
+const slideshow = document.getElementById("slideshow");
 
 function changeBackground() {
-    document.body.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
+    slideshow.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
     bgIndex = (bgIndex + 1) % backgrounds.length;
 }
 
 changeBackground();
-setInterval(changeBackground, 5000);
+setInterval(changeBackground, 4500);
 
-// FLOATING HEARTS
+// Floating Hearts
 function createHeart() {
     let heart = document.createElement("div");
     heart.className = "heart";
     heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (24 + Math.random() * 28) + "px";
-    document.body.appendChild(heart);
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (26 + Math.random() * 32) + "px";
+    heart.style.top = "80%";
+    document.querySelector('.main-box').appendChild(heart);
 
-    setTimeout(() => heart.remove(), 8000);
+    setTimeout(() => heart.remove(), 7500);
 }
 
-setInterval(createHeart, 550);
-
-// PARTICLES
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-let particles = [];
-
-for(let i = 0; i < 110; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2.2 + 1,
-        dx: (Math.random() - 0.5) * 0.7,
-        dy: (Math.random() - 0.5) * 0.7
-    });
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 105, 180, 0.7)";
-        ctx.fill();
-
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    });
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-// MESSAGE BUTTON
-function showSurprise() {
-    document.getElementById("surprise").style.display = "block";
-}
+setInterval(createHeart, 650);
 </script>
 
 </body>
